@@ -1,8 +1,8 @@
 VERSION=1.3.0
 DATE=$(shell DATE)
-BOOTSTRAP = ./bootstrap.css
-BOOTSTRAP_MIN = ./bootstrap.min.css
-BOOTSTRAP_LESS = ./lib/bootstrap.less
+BOOTSTRAP = ./chinstrap.css
+BOOTSTRAP_MIN = ./chinstrap.min.css
+BOOTSTRAP_LESS = ./lib/chinstrap.less
 LESS_COMPESSOR ?= `which lessc`
 WATCHR ?= `which watchr`
 
@@ -12,9 +12,9 @@ build:
 		lessc ${BOOTSTRAP_LESS}.tmp > ${BOOTSTRAP}; \
 		lessc ${BOOTSTRAP_LESS}.tmp > ${BOOTSTRAP_MIN} --compress; \
 		rm -f ${BOOTSTRAP_LESS}.tmp; \
-		echo "Bootstrap successfully built! - `date`"; \
+		echo "Chinstrap successfully built! - `date`"; \
 	else \
-		echo "You must have the LESS compiler installed in order to build Bootstrap."; \
+		echo "You must have the LESS compiler installed in order to build Chinstrap."; \
 		echo "You can install it by running: npm install less -g"; \
 	fi
 
@@ -23,7 +23,7 @@ watch:
 	  echo "Watching less files..."; \
 	  watchr -e "watch('lib/.*\.less') { system 'make' }"; \
 	else \
-		echo "You must have the watchr installed in order to watch Bootstrap less files."; \
+		echo "You must have the watchr installed in order to watch Chinstrap less files."; \
 		echo "You can install it by running: gem install watchr"; \
 	fi
 
